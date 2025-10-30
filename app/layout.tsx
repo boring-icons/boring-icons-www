@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
+import { Barlow } from "next/font/google";
 import "./globals.css";
+
+const barlow = Barlow({
+  weight: ["400", "500", "600"],
+  style: "normal",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Boring Icons",
@@ -12,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={barlow.className}>
       <body className="antialiased">
         {children}
       </body>
