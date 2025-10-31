@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="text-2xl font-semibold mb-4">Test Icons</h1>
         <div className="flex gap-4">
           <img src={homeIcon} />
-          <Search size={24} />
+          <Search size="1.5rem" />
         </div>
       </main>
     </div>
