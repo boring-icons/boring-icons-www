@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import homeIcon from "@boring-icons/svg/dist/home.svg";
-import { Search } from "@boring-icons/react";
+import { IconSearch } from "@boring-icons/react";
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
         <h1 className="text-2xl font-semibold mb-4">Test Icons</h1>
         <div className="flex gap-4">
           <img src={homeIcon} />
-          <Search size="1.5rem" />
+          <IconSearch size="1.5rem" />
         </div>
       </main>
     </div>
