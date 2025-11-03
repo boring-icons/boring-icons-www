@@ -1,7 +1,13 @@
-import Header from "@/components/Header";
+"use client";
+
+import { useState } from "react";
+import Header from "@/app/components/Header";
+import IconModal from "@/app/components/IconModal";
 import * as BoringIcons from "@boring-icons/react";
 
 export default function Home() {
+  const [selectedIcon, setSelectedIcon] = useState<string | null>(null);
+
   // Get all icon components
   const icons = Object.keys(BoringIcons)
     .filter((key) => key.startsWith("Icon"))
@@ -22,7 +28,8 @@ export default function Home() {
             return (
               <div
                 key={iconName}
-                className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-50 transition-colors group"
+                onClick={() => setSelectedIcon(iconName)}
+                className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-50 transition-colors group cursor-pointer"
               >
                 <IconComponent
                   size="2rem"
@@ -34,6 +41,14 @@ export default function Home() {
           })}
         </div>
       </main>
+
+      {/* Modal */}
+      {selectedIcon && (
+        <IconModal
+          iconName={selectedIcon}
+          onClose={() => setSelectedIcon(null)}
+        />
+      )}
     </div>
   );
 }
