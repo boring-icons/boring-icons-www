@@ -22,9 +22,12 @@ export default function Home() {
             return (
               <div
                 key={iconName}
-                className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex flex-col items-center justify-center p-4 border rounded-lg hover:bg-gray-50 transition-colors group"
               >
-                <IconComponent size="2rem" className="mb-2" />
+                <IconComponent
+                  size="2rem"
+                  className="mb-2 transition-all duration-200 group-hover:scale-125 group-hover:text-blue-600"
+                />
                 <span className="text-xs text-center text-gray-700">{displayName}</span>
               </div>
             );
