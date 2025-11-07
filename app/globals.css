@@ -2,4 +2,43 @@
 
 @theme {
   --color-brand-base: #3e3380;
+
+  /* Light mode colors */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-card: #f8fafc;
+  --color-card-foreground: #0f172a;
+  --color-border: #e2e8f0;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  --color-accent: #e2e8f0;
+  --color-accent-foreground: #0f172a;
+}
+
+/* Dark mode colors */
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-background: #000000;
+    --color-foreground: #fafafa;
+    --color-card: #0a0a0a;
+    --color-card-foreground: #fafafa;
+    --color-border: #262626;
+    --color-muted: #171717;
+    --color-muted-foreground: #a3a3a3;
+    --color-accent: #1a1a1a;
+    --color-accent-foreground: #fafafa;
+  }
+}
+
+/* Dark mode class override (for manual theme switching) */
+.dark {
+  --color-background: #000000;
+  --color-foreground: #fafafa;
+  --color-card: #0a0a0a;
+  --color-card-foreground: #fafafa;
+  --color-border: #262626;
+  --color-muted: #171717;
+  --color-muted-foreground: #a3a3a3;
+  --color-accent: #1a1a1a;
+  --color-accent-foreground: #fafafa;
 }
