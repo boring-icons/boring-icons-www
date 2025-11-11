@@ -3,7 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-export function ThemeToggle() {
+export default function ThemeToggle() {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -14,7 +14,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted">
+      <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[--color-bg-muted]">
         <span className="w-5 h-5" />
       </div>
     );
@@ -104,12 +104,12 @@ export function ThemeToggle() {
   return (
     <button
       onClick={cycleTheme}
-      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-accent transition-colors"
+      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[--color-bg-muted] hover:bg-[--color-bg-subtle] transition-colors"
       aria-label={`Current theme: ${getLabel()}. Click to change.`}
       title={`Theme: ${getLabel()}`}
     >
-      <span className="text-foreground">{getIcon()}</span>
-      <span className="text-sm text-muted-foreground hidden sm:inline">
+      <span className="text-[--color-fg]">{getIcon()}</span>
+      <span className="text-sm text-[--color-fg-muted] hidden sm:inline">
         {getLabel()}
       </span>
     </button>
